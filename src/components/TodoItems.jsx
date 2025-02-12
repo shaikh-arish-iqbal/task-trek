@@ -2,33 +2,44 @@ import tick from "../assets/tick.png";
 import not_tick from "../assets/not_tick.png";
 import delete_icon from "../assets/delete.png";
 
-const TodoItems = ({ text, id, isComplete, deleteTodo, toggle }) => {
+const TodoItems = ({
+  text,
+  id,
+  isComplete,
+  dueDate,
+  submissionDate,
+  deleteTodo,
+  toggle,
+}) => {
   return (
-    <div className="flex items-center my-3 gap-2">
+    <div className="flex items-center justify-between bg-stone-800 p-4 rounded-lg shadow-md my-2">
       <div
         onClick={() => {
-          toggle(id);
+          if (toggle) toggle(id);
         }}
-        className="flex flex-1 items-center cursor-pointer"
+        className="flex items-center cursor-pointer"
       >
-        <img className="w-7" src={isComplete ? tick : not_tick} alt="" />
-        <p
-          className={`text-slate-300 ml-4 text-[17px] ${
-            isComplete ? "line-through" : ""
-          }`}
-        >
-          {text}
-        </p>
+        <img className="w-6" src={isComplete ? tick : not_tick} alt="" />
+        <div className="ml-4">
+          <p
+            className={`text-white text-lg ${isComplete ? "line-through" : ""}`}
+          >
+            {text}
+          </p>
+          <p className="text-yellow-400 text-sm">🎯 Due: {dueDate}</p>
+          <p className="text-gray-400 text-sm">
+            📅 Submission: {submissionDate}
+          </p>
+        </div>
       </div>
-
-      <img
-        onClick={() => {
-          deleteTodo(id);
-        }}
-        className="w-3.5 cursor-pointer"
-        src={delete_icon}
-        alt=""
-      />
+      {deleteTodo && (
+        <img
+          onClick={() => deleteTodo(id)}
+          className="w-5 cursor-pointer hover:opacity-75"
+          src={delete_icon}
+          alt="Delete"
+        />
+      )}
     </div>
   );
 };
