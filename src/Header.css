@@ -1,0 +1,82 @@
+/* Adjusted Header Styles for Todo App */
+#header {
+    width: 100%;
+    height: auto;
+    padding: 10px 0;
+    background-color: #1C1917;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the logo and nav items */
+    padding: 0 20px;
+  }
+  
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Reduce space between logo and menu */
+  }
+  
+  .logo {
+    width: 120px;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    margin: 0 10px;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    position: relative;
+  }
+  
+  nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    background: gold;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.5s;
+  }
+  
+  nav ul li a:hover::after {
+    width: 100%;
+  }
+  
+  /* Adjustments to accommodate the todo app */
+  .todo-container {
+    margin-top: 80px;
+    width: 90%;
+    max-width: 600px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  

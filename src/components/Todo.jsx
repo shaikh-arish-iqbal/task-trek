@@ -74,6 +74,18 @@ const Todo = () => {
 
   return (
     <div className="bg-black place-self-center w-11/12 max-w-md flex flex-col p-7 min-h-[550px] rounded-xl shadow-xl">
+      <div id="header">
+        <div className="container">
+          <nav>
+            <img src="media/new.png" className="logo" alt="Logo" />
+            <ul id="sidemenu">
+              <li>
+                <a href="https://shaikharish.netlify.app/">Home</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
       {/************* Title **********/}
       <div className="flex items-center mt-4 gap-2">
         <img className="w-8" src={todo_icon} alt="" />
