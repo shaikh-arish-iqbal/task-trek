@@ -113,7 +113,7 @@ const Todo = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             className="bg-white p-2 rounded w-full"
-            placeholder="Enter Teacher Password"
+            placeholder="Enter Teacher Password (teacher123)"
           />
           <button
             onClick={() =>
